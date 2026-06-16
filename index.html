@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fede Biagioli — Diseño & estrategia</title>
+    <meta name="description" content="Diseñador gráfico con 9 años de experiencia en branding, identidad visual, diseño web y UX/UI. Rosario, Argentina.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --blue:        #1a6fa8;
+            --blue-dark:   #0f4a73;
+            --orange:      #e07520;
+            --dark:        #111827;
+            --gray-bg:     #f5f6f8;
+            --text:        #1f2937;
+            --text-light:  #6b7280;
+            --white:       #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; }
+
+        /* ── HERO ────────────────────────────────────────── */
+        .hero {
+            background: var(--dark);
+            color: var(--white);
+            padding: 72px 24px 88px;
+            text-align: center;
+        }
+
+        .hero-logo {
+            font-size: 2.6rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        .hero-logo span { color: var(--orange); }
+
+        .hero-eyebrow {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--blue);
+        }
+
+        .hero-tagline {
+            margin-top: 36px;
+            font-size: 1.45rem;
+            font-weight: 400;
+            color: rgba(255,255,255,0.85);
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+        .hero-tagline strong {
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        .btn-wa {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 44px;
+            padding: 16px 32px;
+            background: #25D366;
+            color: var(--white);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-wa:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(37,211,102,0.35);
+        }
+
+        .btn-wa-icon {
+            width: 22px;
+            height: 22px;
+            fill: white;
+        }
+
+        /* Logo imagen real */
+        .hero-logo-img {
+            width: 200px;
+            height: auto;
+            mix-blend-mode: screen; /* negro → transparente, blanco y azul quedan */
+            margin-bottom: 4px;
+        }
+
+        /* ── SECCIÓN GENÉRICA ────────────────────────────── */
+        .section {
+            padding: 72px 24px;
+        }
+
+        .section-label {
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 48px;
+            line-height: 1.2;
+        }
+
+        /* ── SERVICIOS ───────────────────────────────────── */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 560px) {
+            .services-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (min-width: 900px) {
+            .services-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        .card {
+            background: var(--gray-bg);
+            border-radius: 16px;
+            padding: 28px 22px;
+            border-top: 4px solid var(--blue);
+            transition: transform 0.2s;
+        }
+
+        .card:hover { transform: translateY(-4px); }
+
+        .card.featured {
+            border-top-color: var(--orange);
+            background: #fff8f3;
+        }
+
+        .card-icon { font-size: 2rem; margin-bottom: 14px; }
+
+        .card-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.55;
+        }
+
+        .card-badge {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 3px 10px;
+            background: var(--orange);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ── PORTFOLIO ───────────────────────────────────── */
+        .portfolio-section {
+            background: var(--gray-bg);
+            padding: 72px 24px;
+        }
+
+        .portfolio-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            max-width: 540px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 560px) {
+            .portfolio-btns { flex-direction: row; }
+        }
+
+        .btn-port {
+            flex: 1;
+            display: block;
+            text-align: center;
+            padding: 16px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-port:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+
+        .btn-port.primary {
+            background: var(--blue);
+            color: white;
+        }
+
+        .btn-port.secondary {
+            background: white;
+            color: var(--blue);
+            border: 2px solid var(--blue);
+        }
+
+        /* ── SOBRE MÍ ────────────────────────────────────── */
+        .about-inner {
+            max-width: 680px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-text {
+            font-size: 1.05rem;
+            color: var(--text);
+            line-height: 1.85;
+        }
+
+        .pill {
+            display: inline-block;
+            background: var(--blue);
+            color: white;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin: 2px;
+        }
+
+        .pill.orange { background: var(--orange); }
+
+        /* ── CLIENTES / REFERENCIAS ──────────────────────── */
+        .refs-section {
+            background: var(--dark);
+            padding: 56px 24px;
+            text-align: center;
+        }
+
+        .refs-section .section-title { color: white; margin-bottom: 32px; }
+
+        .refs-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .ref-chip {
+            padding: 8px 18px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 30px;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.88rem;
+            font-weight: 500;
+        }
+
+        /* ── CTA FINAL ───────────────────────────────────── */
+        .cta-section {
+            padding: 88px 24px;
+            background: var(--blue-dark);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 2.1rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .cta-sub {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 16px;
+            max-width: 420px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-keyword {
+            display: inline-block;
+            background: var(--orange);
+            color: white;
+            padding: 2px 10px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .cta-note {
+            margin-top: 16px;
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .btn-wa-lg {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 36px;
+            padding: 20px 40px;
+            background: #25D366;
+            color: white;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-wa-lg:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(37,211,102,0.4);
+        }
+
+        /* ── FOOTER ──────────────────────────────────────── */
+        footer {
+            background: #0d0d0d;
+            color: rgba(255,255,255,0.4);
+            text-align: center;
+            padding: 28px 24px;
+            font-size: 0.8rem;
+        }
+
+        footer a {
+            color: rgba(255,255,255,0.6);
+            transition: color 0.2s;
+        }
+
+        footer a:hover { color: white; }
+
+        .footer-links {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <img src="./logo.png" alt="Fede Biagioli" class="hero-logo-img">
+        <div class="hero-eyebrow">Diseño &amp; estrategia</div>
+        <p class="hero-tagline">
+            No se trata de publicar más.<br>
+            <strong>Se trata de comunicar mejor.</strong>
+        </p>
+        <a href="https://wa.me/5493413502283?text=ENFOQUE" class="btn-wa" target="_blank" rel="noopener">
+            <svg class="btn-wa-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.122 1.523 5.854L0 24l6.314-1.506A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.015-1.373l-.36-.214-3.727.888.916-3.617-.234-.373A9.79 9.79 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
+            </svg>
+            Hablemos por WhatsApp
+        </a>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="section">
+        <p class="section-label">Lo que hago</p>
+        <h2 class="section-title">Servicios de diseño</h2>
+        <div class="services-grid">
+            <div class="card featured">
+                <div class="card-icon">🎯</div>
+                <div class="card-title">Branding &amp; Identidad</div>
+                <p class="card-desc">Logo, sistema visual, paleta, tipografía y manual de marca. Tu negocio con una imagen que comunica.</p>
+                <div class="card-badge">Más solicitado</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">🌐</div>
+                <div class="card-title">Diseño Web</div>
+                <p class="card-desc">Sitios WordPress profesionales, landing pages y sitios institucionales con UX cuidado y CSS custom.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📱</div>
+                <div class="card-title">UX/UI Digital</div>
+                <p class="card-desc">Interfaces web y mobile en Figma. Wireframes, prototipos y diseño centrado en la experiencia del usuario.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📰</div>
+                <div class="card-title">Editorial &amp; RRSS</div>
+                <p class="card-desc">Publicaciones, materiales institucionales y contenido visual para redes sociales.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio-section">
+        <p class="section-label">Trabajos</p>
+        <h2 class="section-title">Portfolio</h2>
+        <div class="portfolio-btns">
+            <a href="https://fjbiagioli.myportfolio.com/trabajos-globales" class="btn-port primary" target="_blank" rel="noopener">
+                Ver portfolio →
+            </a>
+            <a href="https://www.behance.net/fjbiagioli" class="btn-port secondary" target="_blank" rel="noopener">
+                Ver en Behance →
+            </a>
+        </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section class="section">
+        <div class="about-inner">
+            <p class="section-label">Sobre mí</p>
+            <h2 class="section-title">¿Quién soy?</h2>
+            <p class="about-text">
+                Diseñador gráfico con <strong>9 años de trayectoria</strong> en branding, identidad visual, UX/UI y diseño web. Egresado de la Escuela Superior de Diseño de Rosario.<br><br>
+                Trabajé con clientes en
+                <span class="pill">Argentina</span>
+                <span class="pill">España</span>
+                <span class="pill">Estados Unidos</span><br><br>
+                Autor de dos tipografías originales distribuidas internacionalmente:
+                <span class="pill orange">Delator Font</span>
+                <span class="pill orange">Calmadita</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- CLIENTES / REFS -->
+    <section class="refs-section">
+        <h2 class="section-title">Proyectos & clientes</h2>
+        <div class="refs-grid">
+            <div class="ref-chip">Empire Signs &amp; Wraps · Houston, TX</div>
+            <div class="ref-chip">Milano Resto · Barcelona</div>
+            <div class="ref-chip">Sakuru · Barcelona</div>
+            <div class="ref-chip">HardwareHouse · Rosario</div>
+            <div class="ref-chip">Templus</div>
+            <div class="ref-chip">Zepol Mix</div>
+            <div class="ref-chip">NEX</div>
+            <div class="ref-chip">Candyprop</div>
+            <div class="ref-chip">Puzl Cryptocurrency</div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-section">
+        <h2 class="cta-title">¿Tenés un proyecto<br>en mente?</h2>
+        <p class="cta-sub">
+            Escribime <em class="cta-keyword">ENFOQUE</em> por WhatsApp y te respondo con lo que necesitás saber.
+        </p>
+        <a href="https://wa.me/5493413502283?text=ENFOQUE" class="btn-wa-lg" target="_blank" rel="noopener">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.122 1.523 5.854L0 24l6.314-1.506A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.015-1.373l-.36-.214-3.727.888.916-3.617-.234-.373A9.79 9.79 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
+            </svg>
+            Escribir ENFOQUE por WhatsApp
+        </a>
+        <p class="cta-note">También podés escribirme a fjbiagioli@gmail.com</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Federico Biagioli · Rosario, Argentina</p>
+        <div class="footer-links">
+            <a href="https://www.instagram.com/fedebiagioli/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.linkedin.com/in/fjbiagioli/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.behance.net/fjbiagioli" target="_blank" rel="noopener">Behance</a>
+            <a href="mailto:fjbiagioli@gmail.com">Email</a>
+        </div>
+    </footer>
+
+</body>
+</html>
