@@ -191,6 +191,83 @@
             letter-spacing: 1px;
         }
 
+        /* ── EDU FEATURE STRIP ───────────────────────────── */
+        .edu-strip {
+            background: var(--blue-dark);
+            padding: 56px 24px;
+        }
+
+        .edu-strip-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+            text-align: center;
+        }
+
+        @media (min-width: 760px) {
+            .edu-strip-inner {
+                flex-direction: row;
+                text-align: left;
+                gap: 48px;
+            }
+        }
+
+        .edu-strip-icon {
+            font-size: 3.5rem;
+            flex-shrink: 0;
+        }
+
+        .edu-strip-tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.85);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        .edu-strip h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.25;
+            margin-bottom: 10px;
+        }
+
+        .edu-strip p {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.65;
+            max-width: 520px;
+        }
+
+        .btn-edu {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 20px;
+            padding: 14px 28px;
+            background: #F0A500;
+            color: #1A2A33;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            white-space: nowrap;
+        }
+
+        .btn-edu:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(240,165,0,0.35);
+        }
+
         /* ── PORTFOLIO ───────────────────────────────────── */
         .portfolio-section {
             background: var(--gray-bg);
@@ -413,6 +490,21 @@
                 <div class="card-icon">📰</div>
                 <div class="card-title">Editorial &amp; RRSS</div>
                 <p class="card-desc">Publicaciones, materiales institucionales y contenido visual para redes sociales.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS EDUCATIVOS — BANDA DESTACADA -->
+    <section class="edu-strip">
+        <div class="edu-strip-inner">
+            <div class="edu-strip-icon">📚</div>
+            <div>
+                <span class="edu-strip-tag">Para instituciones educativas</span>
+                <h3>Diseño editorial<br>para colegios y docentes</h3>
+                <p>Cuadernillos, láminas y materiales pedagógicos con diseño profesional. Trabajo con el material didáctico de tu institución — sin generar contenido docente.</p>
+                <a href="/educativo/" class="btn-edu">
+                    Conocé el servicio →
+                </a>
             </div>
         </div>
     </section>
