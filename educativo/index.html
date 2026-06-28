@@ -45,9 +45,9 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-
 .btn-primary:hover{opacity:.9}
 .btn-ghost{border:2px solid rgba(255,255,255,.5);color:#fff;padding:12px 26px;border-radius:6px;font-weight:600;font-size:.95rem;transition:border-color .2s}
 .btn-ghost:hover{border-color:#fff}
-.hero-mockup{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,1fr);gap:8px;transform:perspective(900px) rotateY(-7deg) rotateX(2deg);filter:drop-shadow(0 20px 40px rgba(0,0,0,.35))}
-.hero-mockup .cover{grid-row:1/span 3;width:100%;border-radius:8px;border:2px solid rgba(255,255,255,.25);object-fit:cover;display:block;height:100%}
-.hero-mockup .interior{width:100%;border-radius:6px;border:2px solid rgba(255,255,255,.2);object-fit:cover;display:block}
+.hero-mockup{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,1fr);gap:8px;transform:perspective(900px) rotateY(-7deg) rotateX(2deg);filter:drop-shadow(0 20px 40px rgba(0,0,0,.35));height:420px;max-height:420px}
+.hero-mockup .cover{grid-row:1/span 3;width:100%;border-radius:8px;border:2px solid rgba(255,255,255,.25);object-fit:cover;object-position:top;display:block;height:100%;min-height:0}
+.hero-mockup .interior{width:100%;border-radius:6px;border:2px solid rgba(255,255,255,.2);object-fit:cover;object-position:top;display:block;height:100%;min-height:0}
 
 /* STRIP */
 .strip{background:var(--accent);padding:16px 32px;text-align:center;font-weight:600;font-size:.9rem;color:var(--ink)}
